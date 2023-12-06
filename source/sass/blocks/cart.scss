@@ -1,0 +1,165 @@
+.cart {
+	z-index: 100;
+	position: relative;
+	cursor: pointer;
+
+	& ::-webkit-scrollbar {
+		width: 2px;
+	}
+
+	&.active {
+		&:hover {
+			.cart__content {
+				display: flex;
+			}
+		}
+	}
+}
+
+.cart__wrapper {
+	display: flex;
+	padding-right: 20px;
+	flex-direction: column;
+	margin-left: auto;
+	justify-content: space-between;
+}
+
+.cart__content {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 20px;
+	right: 0;
+	background-color: red;
+	width: 600px;
+	padding: 10px;
+	border-radius: 6px;
+	background: #F5ECE3;
+	box-shadow: 0px 0px 7px 2px #000000;
+
+	@media (max-width: 760px) {
+		top: -20px;
+		right: -15px;
+		width: 100vw;
+		min-height: 100vh;
+		padding-bottom: 1000px;
+	}
+}
+
+.cart__btn {
+	width: 100%;
+	margin: 20px auto 20px auto;
+	height: 63px;
+	border-radius: 50px;
+	border: none;
+	background: #EEE4DA;
+	cursor: pointer;
+	transition: background-color .3s;
+
+	&:hover {
+		background-color: #eedcca;
+	}
+}
+
+.cart__list {
+	list-style: none;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	max-height: 350px;
+	overflow-y: scroll;
+}
+
+.cart__item {
+	width: 100%;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	background-color: #eedcca;
+}
+
+.cart__product-name {
+	margin: 0;
+	font-size: 24px;
+
+	@media (max-width: 760px) {
+		font-size: 18px;
+	}
+}
+
+.cart__product-price {
+	margin-top: 30px;
+
+	@media (max-width: 760px) {
+		margin-top: 20px;
+	}
+}
+
+.cart__delete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+	flex-shrink: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	opacity: .8;
+	font-size: 12px;
+	align-self: flex-end;
+}
+
+.cart__bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 20px;
+	margin-top: 10px;
+	border-top: 1px solid #eedcca;
+	color: #000;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 120%;
+	letter-spacing: -0.72px;
+}
+
+.cart__full {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cart__img {
+	width: 128px;
+	height: 109.119px;
+	object-fit: contain;
+	margin-right: 50px;
+
+	@media (max-width: 760px) {
+		margin-right: 10px;
+	}
+}
+
+.cart__value {
+	display: none;
+}
+
+.cart__value.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: -4px;
+	right: -10px;
+	text-align: center;
+	background-color: rgb(255, 139, 139);
+	border: 1px solid rgba(58, 58, 58, 0.361);
+	padding: 2px;
+	border-radius: 50%;
+	font-size: 10px;
+	font-weight: bold;
+}

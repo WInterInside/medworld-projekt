@@ -1,0 +1,100 @@
+.catalogue__list {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+	gap: 2rem;
+}
+
+.catalogue__item {
+	position: relative;
+	display: flex;
+	width: 310px;
+	height: 423px;
+	border: 10px solid #efd3b8ab;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 0 auto;
+
+	& img {
+		transition: transform 1s;
+	}
+}
+
+.catalogue__caption {
+	position: absolute;
+	bottom: 10px;
+	padding-left: 10px;
+	margin: 0;
+	color: #383838;
+	font-family: Cormorant SC;
+	font-size: 48px;
+	text-align: left;
+	font-weight: 700;
+	line-height: 120%;
+	letter-spacing: -1.44px;
+	mix-blend-mode: color-burn;
+	transition: color 1s, transform 1s;
+
+	&--light {
+		mix-blend-mode: normal;
+		color: #EEE4DA;
+	}
+}
+
+.catalogue__link {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+	&::before {
+		@include pseudo;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		transition: background-color 1s;
+		background-color: transparent;
+	}
+
+	&::after {
+		@include pseudo;
+		z-index: 2;
+		bottom: 50px;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-image: url("../img/arr-r.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		transform: translateX(-100%);
+		transition: transform 1s;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			& img {
+				transform: scale(1.1);
+			}
+
+			&::after {
+				transform: none;
+			}
+
+			&::before {
+				background-color: rgba(0, 0, 0, 0.37);
+			}
+
+			.catalogue__caption {
+				position: relative;
+				z-index: 2;
+				color: #fff;
+				mix-blend-mode: normal;
+				transform: translateY(-200px);
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@mixin list-style () {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}

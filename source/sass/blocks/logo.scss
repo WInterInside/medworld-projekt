@@ -1,0 +1,64 @@
+.logo {
+	position: absolute;
+	top: 20px;
+	left: calc(50% - 89px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	overflow: hidden;
+
+	@media (max-width: 1250px) {
+		left: calc(50% - 55px);
+	}
+
+	&--dark {
+		left: calc(50% - 89px);
+		top: unset;
+
+		@media (max-width: 1250px) {
+			top: 25px;
+		}
+	}
+}
+
+.logo__img {
+	width: 113px;
+	height: 74px;
+}
+
+.logo__caption {
+	font-family: Cormorant SC;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%;
+	letter-spacing: -0.72px;
+	background: linear-gradient(180deg, #F3B57D 21.33%, #F6E3D1 28.65%, #F5E0CC 38.01%, #F6E3D1 63.03%, #FFF 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@media (max-width: 1250px) {
+		display: none;
+	}
+}
+
+.logo__dark-caption {
+	font-family: Cormorant SC;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%;
+	letter-spacing: -0.72px;
+	background: linear-gradient(180deg, #201F1F 21.33%, #555 28.65%, #555 38.01%, #555 63.03%, #000 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    max-width: 100%;
+    display: block;
+}
